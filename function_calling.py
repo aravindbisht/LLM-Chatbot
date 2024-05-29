@@ -1,7 +1,7 @@
 from sendgrid.helpers.mail import *
 from data.sqlitedb import SqliteDB
 import sendgrid
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 import os.path
 import json
@@ -9,9 +9,9 @@ import datetime
 import requests
 
 
-load_dotenv()
+#load_dotenv()
 from vectordb import Pinecode_DB
-vector_db = Pinecode_DB()
+vector_db = Pinecode_DB(api_key=os.environ.get('PINECONE_API_KEY'))
 sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
 sqlite_db = SqliteDB()
 

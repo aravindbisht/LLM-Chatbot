@@ -1,9 +1,9 @@
 import os
 from pinecone import Pinecone, ServerlessSpec, PodSpec
-from dotenv import load_dotenv
-load_dotenv()
+#from dotenv import load_dotenv
+#load_dotenv()
 from openai import OpenAI
-client = OpenAI()
+client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 class Pinecode_DB:
     def __init__(self, api_key=None, index_name="medical-kb",name_space="medical"):
         if api_key is None:

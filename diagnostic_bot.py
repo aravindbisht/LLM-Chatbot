@@ -5,11 +5,12 @@ from function_calling import available_functions, tools
 import logging
 from logging.handlers import RotatingFileHandler
 
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 
-load_dotenv()
-client = OpenAI()
+#load_dotenv()
+
+client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 
 
 class Diagnostic_bot:
